@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: Verdana;
+    font-size: 15px;
+}
+
+header {
+    background-color: #C7FFD4;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+h1 {
+    font-size: 20px;
+    color: #194357;
+}
+
+.header-button {
+    background-color: transparent;
+    display: flex;
+}
+
+body {
+    height: 10vh;
+    width: 514px;
+    background-color: #B4ECC1;
+}
+
+img {
+    height: 32px;
+    
+}
