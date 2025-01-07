@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,17 +15,22 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    padding: 15px;
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 28px;
     color: #194357;
 }
 
 .header-button {
     background-color: transparent;
+}
+
+#button-container {
     display: flex;
+    justify-content: space-between;
+    width: 15%;
 }
 
 body {
@@ -36,5 +41,5 @@ body {
 
 img {
     height: 32px;
-    
+    width: 32px;
 }
