@@ -16,6 +16,10 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 15px;
+
+    &.night-mode {
+        background-color: #13303E;
+    }
 }
 
 h1 {
@@ -34,8 +38,8 @@ h1 {
 }
 
 body {
-    height: 10vh;
-    width: 514px;
+    height: 1000vh;
+    width: 1000vh;
     background-color: #B4ECC1;
 }
 
