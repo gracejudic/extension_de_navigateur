@@ -71,8 +71,19 @@ img {
     background-color: #B4ECC1;
     height: 350px;
     width: 100%;
-    
+
     &.night-mode {
         background-color: #194357;
     }
+}
+
+.main-buttons {
+    background-color: #C7FFD4;
+    border : 1px solid #194357;
+    border-radius: 10%;
+    height: 75px;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
