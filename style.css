@@ -6,11 +6,12 @@
     outline: none;
     font-family: Verdana;
     font-size: 15px;
+    background-color: transparent;
 }
 
 header {
     background-color: #C7FFD4;
-    height: 10vh;
+    height: 50px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -19,16 +20,28 @@ header {
 
     &.night-mode {
         background-color: #13303E;
+        color: #B4ECC1;
+    }
+}
+
+#switch-mode{
+
+    &.night-mode {
+        content: url('assets/sun-night-mode.png');
     }
 }
 
 h1 {
     font-size: 28px;
     color: #194357;
+
+    &.night-mode {
+        color: #B4ECC1;
+    }
 }
 
-.header-button {
-    background-color: transparent;
+button:hover {
+    cursor: pointer;
 }
 
 #button-container {
@@ -37,13 +50,29 @@ h1 {
     width: 15%;
 }
 
+#power {
+
+    &.night-mode {
+        content: url('assets/power-night-mode.png');
+    }
+}
+
 body {
-    height: 1000vh;
-    width: 1000vh;
-    background-color: #B4ECC1;
+    height: 400px;
+    width: 450px;
 }
 
 img {
     height: 32px;
     width: 32px;
+}
+
+#main {
+    background-color: #B4ECC1;
+    height: 350px;
+    width: 100%;
+    
+    &.night-mode {
+        background-color: #194357;
+    }
 }
