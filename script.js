@@ -4,7 +4,7 @@ const SWITCH_MODE_IMG_ELMT = document.getElementById("switch-mode")
 const EXTENSION_NAME_ELMT = document.getElementById("extension-name")
 const POWER_IMG_ELMT = document.getElementById("power")
 const MAIN_ELMT = document.getElementById("main")
-const button_test= document.getElementById("test")
+const FONT_CHANGE_BUTTON_ELMT = document.getElementById("font-change");
 
 function dayMode() {
     HEADER_ELMT.classList.remove("night-mode")
@@ -33,3 +33,18 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () =>{
         night_Mode_state =true; 
     }
 })
+
+FONT_CHANGE_BUTTON_ELMT.addEventListener("click", () => {
+    chrome.tabs.query({ 
+        active: true, currentWindow: true 
+    }, (tabs) => {
+        chrome.scripting.executeScript({
+            target: { 
+                tabId: tabs[0].id    
+            },
+            func: () => {
+                document.body.style.fontFamily = "Verdana, sans-serif";
+            }
+        });
+    });
+});
