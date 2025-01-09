@@ -25,6 +25,8 @@ header {
 }
 
 #switch-mode {
+    height: 24px;
+    width: 26px;
   &.night-mode {
     content: url("assets/sun-night-mode.png");
   }
@@ -65,7 +67,7 @@ button:hover {
 
 #power {
   &.night-mode {
-    content: url("assets/power-night-mode.png");
+    content: url("assets/power-button-night-mode.png");
   }
 }
 
