@@ -87,3 +87,22 @@ img {
     justify-content: space-between;
     padding: 10px;
 }
+
+#font-size-change{
+    position: absolute;
+    right: 25px;  /* distance depuis la droite */
+    top: 90px;    /* distance depuis le haut */
+}
+
+#font-size{
+    /* background-color: #194357; */
+    border-radius: #194357;
+    position: relative;
+    z-index: 30;
+    left: 50px;
+    /* text-align: center; */
+    height: 50px;
+    line-height: 50px;     /*même valeur que height*/
+    /* padding: 1px; */
+    
+}
