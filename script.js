@@ -33,30 +33,3 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () =>{
         night_Mode_state =true; 
     }
 })
-
-let isLineHeightIncreased = false;
-
-const ALL_PAGE_TEXT = ['h1','h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li', 'ul', 'td', 'span', 'div']
-
-function increaseLineHeight(myConst) {
-    myConst.forEach(selector => {
-        document.querySelectorAll(selector).forEach(element => {
-            if(isLineHeightIncreased = false) {
-                element.style.setProperty('line-height','1.8','important')
-            } else {
-                element.style.removeProperty('line-height');
-            }   
-        })
-    })
-}
-
-document.getElementById('line-height-change').addEventListener('click',()=> {
-    isLineHeightIncreased=!isLineHeightIncreased
-    chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
-        chrome.scripting.executeScript({
-            target: {tabId: tabs[0].id},
-            args: [ALL_PAGE_TEXT],
-            func: increaseLineHeight
-        });
-    });
-});
