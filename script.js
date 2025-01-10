@@ -5,6 +5,7 @@ const EXTENSION_NAME_ELMT = document.getElementById("extension-name")
 const POWER_IMG_ELMT = document.getElementById("power")
 const MAIN_ELMT = document.getElementById("main")
 const button_test= document.getElementById("test")
+const POWER_BUTTON_ELMT = document.getElementById("power-day-button")
 
 function dayMode() {
     HEADER_ELMT.classList.remove("night-mode")
@@ -32,4 +33,22 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () =>{
         nightMode()
         night_Mode_state =true; 
     }
+})
+
+// export {POWER_BUTTON_ELMT}
+
+let isExtensionOff = false;
+
+function onOffExtension(switchBool) {
+    if (!switchBool) {
+        NIGHT_BUTTON_EXT_ELMT.setAttribute('disabled',true);
+        // rajout bouttons extension
+    } else {
+        NIGHT_BUTTON_EXT_ELMT.removeAttribute('disabled');
+    }
+}
+
+POWER_BUTTON_ELMT.addEventListener('click',() => {
+    isExtensionOff = !isExtensionOff;
+    onOffExtension(isExtensionOff);
 })
