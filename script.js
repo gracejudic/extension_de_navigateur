@@ -6,6 +6,7 @@ const POWER_IMG_ELMT = document.getElementById("power")
 const MAIN_ELMT = document.getElementById("main")
 const button_test= document.getElementById("test")
 const POWER_BUTTON_ELMT = document.getElementById("power-day-button")
+const FONT_CHANGE_BUTTON_ELMT = document.getElementById("font-change");
 
 const BT_FONT_SIZE_CHANGE_ELMT = document.getElementById("font-size-change")
 function dayMode() {
