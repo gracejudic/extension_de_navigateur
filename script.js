@@ -1,5 +1,3 @@
-// import { nightModeWebPage } from "./night-mode-web"
-
 const HEADER_ELMT = document.getElementById("header")
 const NIGHT_BUTTON_EXT_ELMT = document.getElementById("night-button")
 const SWITCH_MODE_IMG_ELMT = document.getElementById("switch-mode")
@@ -7,6 +5,7 @@ const EXTENSION_NAME_ELMT = document.getElementById("extension-name")
 const POWER_IMG_ELMT = document.getElementById("power")
 const MAIN_ELMT = document.getElementById("main")
 const button_test= document.getElementById("test")
+
 
 function dayMode() {
     HEADER_ELMT.classList.remove("night-mode")
@@ -26,9 +25,6 @@ function nightMode (){
 
 let  night_Mode_state = false
 
-
-
-
 NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () =>{
     if(night_Mode_state==true){
         dayMode()
@@ -39,28 +35,3 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () =>{
     }
 })
 
-
-const power = document.getElementById('power-day-button')
-myArrayTruc = ['h1','h2','h3','h4','h5','h6','p','a','li','ul','td','span','div','html','body','header','th','strong','em','main','figcaption']
-
-function nightModeWebPage(myTruc) {
-    myTruc.forEach(selector => {
-        document.querySelectorAll(selector).forEach(element => {
-            element.style.setProperty('background-color', '#13303e', 'important');
-            element.style.setProperty('color', '#b4ecc1', 'important');
-        })
-    })   
-}
-
-power.addEventListener('click',() => {
-    chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
-        chrome.scripting.executeScript({
-            target: {tabId: tabs[0].id},
-            func: nightModeWebPage,
-            args: [myArrayTruc]
-        })
-    })
-})
-
-
-// export {NIGHT_BUTTON_EXT_ELMT}
