@@ -66,7 +66,7 @@ function augmentation_Taille_Police(augmentation_police) {
             const currentFontSize = window.getComputedStyle(element).fontSize;
             const size = parseFloat(currentFontSize);
             if (!augmentation_police) {
-                element.style.fontSize = size * 1.3 + 'px';
+                element.style.fontSize = size , 30 + 'px';
             } else {
                 element.style.fontSize = '';
             }
