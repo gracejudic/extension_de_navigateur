@@ -35,14 +35,13 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () =>{
     }
 })
 
-// export {POWER_BUTTON_ELMT}
-
 let isExtensionOff = false;
 
 function onOffExtension(switchBool) {
     if (!switchBool) {
         NIGHT_BUTTON_EXT_ELMT.setAttribute('disabled',true);
         // rajout bouttons extension
+        // rajouter class CSS disabled
     } else {
         NIGHT_BUTTON_EXT_ELMT.removeAttribute('disabled');
     }
