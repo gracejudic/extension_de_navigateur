@@ -5,7 +5,7 @@ const EXTENSION_NAME_ELMT = document.getElementById("extension-name")
 const POWER_IMG_ELMT = document.getElementById("power")
 const MAIN_ELMT = document.getElementById("main")
 const button_test= document.getElementById("test")
-
+const BT_FONT_SIZE_CHANGE_ELMT = document.getElementById("font-size-change")
 function dayMode() {
     HEADER_ELMT.classList.remove("night-mode")
     SWITCH_MODE_IMG_ELMT.classList.remove("night-mode")
@@ -23,13 +23,56 @@ function nightMode (){
 }
 
 let  night_Mode_state = false
-
 NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () =>{
     if(night_Mode_state==true){
         dayMode()
-        night_Mode_state =false;   
+        night_Mode_state =false;      
     } else {
         nightMode()
-        night_Mode_state =true; 
+        night_Mode_state =true;
+          
     }
 })
+
+
+let augmentation_police = false;
+document.addEventListener('DOMContentLoaded',()=>{
+    BT_FONT_SIZE_CHANGE_ELMT.addEventListener('click',() => {
+         augmentation_police = !augmentation_police;
+        chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
+            chrome.scripting.executeScript({
+                target: {tabId: tabs[0].id},
+                func: augmentation_Taille_Police,
+                args:[augmentation_police],
+
+                
+            })
+        })
+    })
+});
+
+
+
+
+
+
+function augmentation_Taille_Police(augmentation_police) {
+    const CHANGEMENT_TAILLE = ['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td',
+        'span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
+   
+   
+    CHANGEMENT_TAILLE.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((element) => {
+            const currentFontSize = window.getComputedStyle(element).fontSize;
+            const size = parseFloat(currentFontSize);
+            if (!augmentation_police) {
+                element.style.fontSize = size * 1.3 + 'px';
+            } else {
+                element.style.fontSize = '';
+            }
+        });
+    });
+   
+}
+
+
