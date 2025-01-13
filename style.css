@@ -27,6 +27,7 @@ header {
 #switch-mode {
     height: 24px;
     width: 26px;
+
   &.night-mode {
     content: url("assets/sun-night-mode.png");
   }
@@ -43,7 +44,6 @@ h1 {
 
 .header-buttons {
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
-
   outline: none;
   transition: 0.2s all;
 }
@@ -91,6 +91,7 @@ img {
   justify-items: center; /* Centre horizontalement les éléments */
   padding: 20px;
   gap: 20px;
+
   &.night-mode {
     background-color: #194357;
     color: #b4ecc1;
