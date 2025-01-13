@@ -7,7 +7,7 @@ const MAIN_ELMT = document.getElementById("main");
 const POWER_BUTTON_ELMT = document.getElementById("power-day-button");
 const FONT_CHANGE_BUTTON_ELMT = document.getElementById("font-change");
 const FONT_SIZE_CHANGE_BUTTON_ELMT = document.getElementById("font-size-change");
-const button_test = document.getElementById("test");
+
 
 let nightModeState = false;
 let isExtensionOff = false;
@@ -31,7 +31,7 @@ function nightMode() {
 
 
 NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () => {
-    if(nightModeState == true) {
+    if (nightModeState == true) {
         dayMode();
         nightModeState = false;
     } else {
@@ -41,12 +41,13 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () => {
 })
 
 function onOffExtension(switchBool) {
+    let myButtonsArray = [NIGHT_BUTTON_EXT_ELMT,FONT_SIZE_CHANGE_BUTTON_ELMT,FONT_CHANGE_BUTTON_ELMT,BUTTON_FONT_COLOR_CHANGE_ELMT,LINE_HEIGHT_BUTTON_ELMT,NIGHT_MODE_WEB_BUTTON_ELMT,BUTTON_READ_ALT_ATTRIBUT_ELMT];
     if (!switchBool) {
-        NIGHT_BUTTON_EXT_ELMT.setAttribute('disabled',true);
-        // rajout bouttons extension
-        // rajouter class CSS disabled
+        myButtonsArray.forEach((element) => element.classList.add('disabled'));
+        myButtonsArray.forEach((element) => element.disabled = true); 
     } else {
-        NIGHT_BUTTON_EXT_ELMT.removeAttribute('disabled');
+        myButtonsArray.forEach((element) => element.classList.remove('disabled'));
+        myButtonsArray.forEach((element) => element.removeAttribute('disabled')); 
     }
 }
 
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             })
         })
     })
-});
+})
 
 function augmentation_Taille_Police(augmentation_police) {
     const CHANGEMENT_TAILLE = ['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
@@ -80,6 +81,6 @@ function augmentation_Taille_Police(augmentation_police) {
             } else {
                 element.style.fontSize = '';
             }
-        });
-    });
+        })
+    })
 }

@@ -1,6 +1,6 @@
+const BUTTON_READ_ALT_ATTRIBUT_ELMT = document.getElementById('read-alt-attribut');
 
 document.addEventListener('DOMContentLoaded', () => {
-    const BUTTON_READ_ALT_ATTRIBUT_ELMT = document.getElementById('read-alt-attribut');
     let fonctionnaliteActive = false; // Suivre l'état de la fonctionnalité
 
     BUTTON_READ_ALT_ATTRIBUT_ELMT.addEventListener('click', () => {
