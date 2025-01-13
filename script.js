@@ -5,6 +5,7 @@ const EXTENSION_NAME_ELMT = document.getElementById("extension-name")
 const POWER_IMG_ELMT = document.getElementById("power")
 const MAIN_ELMT = document.getElementById("main")
 const button_test= document.getElementById("test")
+
 const POWER_BUTTON_ELMT = document.getElementById("power-day-button")
 const FONT_CHANGE_BUTTON_ELMT = document.getElementById("font-change");
 
@@ -36,6 +37,9 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () =>{
           
     }
 })
+
+
+
 
 let isExtensionOff = false;
 
