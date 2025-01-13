@@ -3,7 +3,8 @@
     "name": "Do Good To Citizens",
     "version": "1.0",
     "description": "accessibilité numérique",
-    "permissions": ["activeTab",
+    "permissions": [
+      "activeTab",
     "scripting",
     "tabs"
   ],

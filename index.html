@@ -10,6 +10,7 @@
     <script def src="on-off-extension.js"></script>
     <script defer src="font-change.js"></script>
     <script defer src="read-alt-image.js"></script>
+    <script defer src="css-cursor.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Do Good To Citizens</title>
 </head>
@@ -65,7 +66,11 @@
         </button>
         <p class="action-bouton">Lecture de l'attribut alt au passage de la souris</p>
        </section>
-        
+      <section class="container-button-main">
+        <label for="size-Police-Slider">Taille de la police : </label>
+        <input type="range" id="size-Police-Slider" min="10" max="45" value="15">
+        <span id="currentSize">15px</span>
+      </section> 
     </main> 
 </body>
 </html>

@@ -4,7 +4,7 @@ const BUTTON_FONT_COLOR_CHANGE_ELMT = document.getElementById("font-color-change
 let isColorChanged = false;
 
 function changeTextColor(isColorChanged) {
-    const elementsToChange = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li', 'ul', 'td', 'span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
+    const elementsToChange = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li', 'ul', 'td', 'span', 'div', 'body', 'header', 'th', 'strong', 'em', 'main', 'article', 'aside', 'summary', 'code'];
     elementsToChange.forEach(selector => {
         document.querySelectorAll(selector).forEach(element => {
             if (!isColorChanged) {
