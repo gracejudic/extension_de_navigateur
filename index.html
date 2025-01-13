@@ -37,12 +37,21 @@
             <p  class="action-bouton">Changement pour une police plus lisible</p>
         </section>
         
-        <section class="container-button-main">
+        <!-- <section class="container-button-main">
             <button id="font-size-change" class="main-buttons">
                 <img src="assets/font-size-change.png" alt="icone changement de taille de police" id="font-size">
             </button>
             <p class="action-bouton">Augmentation de la taille de la police</p>
-        </section>
+        </section> -->
+
+        <section class="container-button-main">
+           <section id="slider-police">
+            <label for="size-Police-Slider"></label>
+            <input type="range" id="size-Police-Slider" min="15" max="45" value="15">
+            <span id="currentSize">15px</span>
+           </section> 
+            <p>Augmentation de la taille de la police</p>
+          </section> 
        
         <section class="container-button-main">
         <button id="font-color-change" class="main-buttons">
@@ -70,12 +79,8 @@
             <img src="assets/icone-alt-attribut.png" alt="icone pour la lecture de l'attribut alt" id="alt-attribut">
         </button>
         <p class="action-bouton">Lecture de l'attribut alt au passage de la souris</p>
+
        </section>
-      <section class="container-button-main">
-        <label for="size-Police-Slider">Taille de la police : </label>
-        <input type="range" id="size-Police-Slider" min="10" max="45" value="15">
-        <span id="currentSize">15px</span>
-      </section> 
         
        <section class="container-button-main">
         <button id="text-to-speech" class="main-buttons">

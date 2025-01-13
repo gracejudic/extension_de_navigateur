@@ -6,8 +6,8 @@ const POWER_IMG_ELMT = document.getElementById("power");
 const MAIN_ELMT = document.getElementById("main");
 const POWER_BUTTON_ELMT = document.getElementById("power-day-button");
 const FONT_CHANGE_BUTTON_ELMT = document.getElementById("font-change");
-const FONT_SIZE_CHANGE_BUTTON_ELMT = document.getElementById("font-size-change");
-
+// const FONT_SIZE_CHANGE_BUTTON_ELMT = document.getElementById("font-size-change");
+const CURRENT_SIZE_ELMT = document.getElementById("currentSize")
 
 let nightModeState = false;
 let isExtensionOff = false;
@@ -19,6 +19,7 @@ function dayMode() {
     EXTENSION_NAME_ELMT.classList.remove("night-mode")
     POWER_IMG_ELMT.classList.remove("night-mode")
     MAIN_ELMT.classList.remove("night-mode")
+    CURRENT_SIZE_ELMT.style.color = '#194357';
 }
 
 function nightMode() { 
@@ -27,6 +28,7 @@ function nightMode() {
     EXTENSION_NAME_ELMT.classList.add("night-mode")
     POWER_IMG_ELMT.classList.add("night-mode")
     MAIN_ELMT.classList.add("night-mode")
+    CURRENT_SIZE_ELMT.style.color = '#194357';
 }
 
 
@@ -41,7 +43,7 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () => {
 })
 
 function onOffExtension(switchBool) {
-    let myButtonsArray = [NIGHT_BUTTON_EXT_ELMT,FONT_SIZE_CHANGE_BUTTON_ELMT,FONT_CHANGE_BUTTON_ELMT,BUTTON_FONT_COLOR_CHANGE_ELMT,LINE_HEIGHT_BUTTON_ELMT,NIGHT_MODE_WEB_BUTTON_ELMT,BUTTON_READ_ALT_ATTRIBUT_ELMT];
+    let myButtonsArray = [NIGHT_BUTTON_EXT_ELMT,FONT_CHANGE_BUTTON_ELMT,BUTTON_FONT_COLOR_CHANGE_ELMT,LINE_HEIGHT_BUTTON_ELMT,NIGHT_MODE_WEB_BUTTON_ELMT,BUTTON_READ_ALT_ATTRIBUT_ELMT];
     if (!switchBool) {
         myButtonsArray.forEach((element) => element.classList.add('disabled'));
         myButtonsArray.forEach((element) => element.disabled = true); 
@@ -56,31 +58,31 @@ POWER_BUTTON_ELMT.addEventListener('click',() => {
     onOffExtension(isExtensionOff);
 })
 
-document.addEventListener('DOMContentLoaded',()=>{
-    FONT_SIZE_CHANGE_BUTTON_ELMT.addEventListener('click',() => {
-        augmentation_police = !augmentation_police;
-        chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
-            chrome.scripting.executeScript({
-                target: {tabId: tabs[0].id},
-                func: augmentation_Taille_Police,
-                args:[augmentation_police],
-            })
-        })
-    })
-})
+// document.addEventListener('DOMContentLoaded',()=>{
+//     FONT_SIZE_CHANGE_BUTTON_ELMT.addEventListener('click',() => {
+//         augmentation_police = !augmentation_police;
+//         chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
+//             chrome.scripting.executeScript({
+//                 target: {tabId: tabs[0].id},
+//                 func: augmentation_Taille_Police,
+//                 args:[augmentation_police],
+//             })
+//         })
+//     })
+// })
 
-function augmentation_Taille_Police(augmentation_police) {
-    const CHANGEMENT_TAILLE = ['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
+// function augmentation_Taille_Police(augmentation_police) {
+//     const CHANGEMENT_TAILLE = ['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
    
-    CHANGEMENT_TAILLE.forEach((selector) => {
-        document.querySelectorAll(selector).forEach((element) => {
-            const currentFontSize = window.getComputedStyle(element).fontSize;
-            const size = parseFloat(currentFontSize);
-            if (!augmentation_police) {
-                element.style.fontSize = size * 1.3 + 'px';
-            } else {
-                element.style.fontSize = '';
-            }
-        })
-    })
-}
+//     CHANGEMENT_TAILLE.forEach((selector) => {
+//         document.querySelectorAll(selector).forEach((element) => {
+//             const currentFontSize = window.getComputedStyle(element).fontSize;
+//             const size = parseFloat(currentFontSize);
+//             if (!augmentation_police) {
+//                 element.style.fontSize = size * 1.3 + 'px';
+//             } else {
+//                 element.style.fontSize = '';
+//             }
+//         })
+//     })
+// }
