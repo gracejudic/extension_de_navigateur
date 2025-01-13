@@ -25,11 +25,18 @@ header {
 }
 
 #switch-mode {
-    height: 24px;
-    width: 26px;
+  height: 24px;
+  width: 26px;
 
   &.night-mode {
     content: url("assets/sun-night-mode.png");
+  }
+}
+
+#night-button {
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 
@@ -83,7 +90,7 @@ img {
 
 #main {
   background-color: #b4ecc1;
-  height: 550px;
+  height: 650px;
   width: 100%;
   display: flex;
   flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
@@ -108,6 +115,11 @@ img {
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
   outline: none;
   transition: 0.2s all;
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
 
 .main-buttons:active {
@@ -132,4 +144,10 @@ img {
   width: 45%; /* Chaque groupe occupe 45% de la largeur */
   text-align: center;
   gap: 10px;
+}
+
+#mode-day-night {
+  &.night-mode-button-change {
+    content: url("assets/sun-day-mode-web.png");
+  }
 }
