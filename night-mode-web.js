@@ -18,7 +18,7 @@ function nightModeWebPage(webElements,booleanSwitchMode) {
 }
 
 
-function machinLune() {
+function nightModeChangingImg() {
     if(!isNightModeOn) {
         MODE_DAY_NIGHT_WEB_IMG.classList.add('night-mode-button-change')
     } else {
@@ -28,7 +28,7 @@ function machinLune() {
 
 NIGHT_MODE_WEB_BUTTON_ELMT.addEventListener('click',() => {
     isNightModeOn =!isNightModeOn;
-    machinLune();
+    nightModeChangingImg();
     chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
         chrome.scripting.executeScript({
             target: {tabId: tabs[0].id},

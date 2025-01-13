@@ -41,7 +41,7 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () => {
 })
 
 function onOffExtension(switchBool) {
-    let myButtonsArray = [NIGHT_BUTTON_EXT_ELMT,FONT_SIZE_CHANGE_BUTTON_ELMT,FONT_CHANGE_BUTTON_ELMT,BUTTON_FONT_COLOR_CHANGE_ELMT,LINE_HEIGHT_BUTTON_ELMT,NIGHT_MODE_WEB_BUTTON_ELMT,BUTTON_READ_ALT_ATTRIBUT_ELMT];
+    let myButtonsArray = [NIGHT_BUTTON_EXT_ELMT,FONT_SIZE_CHANGE_BUTTON_ELMT,FONT_CHANGE_BUTTON_ELMT,BUTTON_FONT_COLOR_CHANGE_ELMT,LINE_HEIGHT_BUTTON_ELMT,NIGHT_MODE_WEB_BUTTON_ELMT,BUTTON_READ_ALT_ATTRIBUT_ELMT,TEXT_TO_SPEECH_BUTTON_ELMT];
     if (!switchBool) {
         myButtonsArray.forEach((element) => element.classList.add('disabled'));
         myButtonsArray.forEach((element) => element.disabled = true); 
