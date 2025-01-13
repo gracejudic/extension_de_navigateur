@@ -4,12 +4,15 @@
     "version": "1.0",
     "description": "accessibilité numérique",
     "permissions": ["activeTab",
-    "scripting"
+    "scripting",
+    "tabs"
   ],
     "host_permissions":[
         "<all_urls>"
     ],
     "action":{
-        "default_popup":"index.html"
+        "default_popup":"index.html",
+         
+    "default_icon": "assets/power-button-day-mode.png"
+  }
     }
-}

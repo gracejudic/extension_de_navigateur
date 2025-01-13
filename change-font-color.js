@@ -9,8 +9,8 @@ function changeTextColor(isColorChanged) {
         document.querySelectorAll(selector).forEach(element => {
             if (!isColorChanged) {
                 // Appliquer les styles
-                element.style.setProperty('color', '#B4ECC1', 'important');
-                element.style.setProperty('background-color', '#194357', 'important');
+                element.style.setProperty('color', '#194357', 'important');
+                element.style.setProperty('background-color', '#B4ECC1', 'important');
             } else {
                 // Réinitialiser les styles
                 element.style.removeProperty('color');
@@ -23,8 +23,8 @@ function changeTextColor(isColorChanged) {
 document.addEventListener('DOMContentLoaded',()=>{
     BUTTON_FONT_COLOR_CHANGE_ELMT.addEventListener('click',() => {
           // Basculer l'état
-          isColorChanged = !isColorChanged;
-        chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
+        isColorChanged = !isColorChanged;
+        chrome.tabs.query({active: true, currentWindow: true }, (tabs)=> {
             chrome.scripting.executeScript({
                 target: {tabId: tabs[0].id},
                 func: changeTextColor,

@@ -25,6 +25,9 @@ header {
 }
 
 #switch-mode {
+    height: 24px;
+    width: 26px;
+
   &.night-mode {
     content: url("assets/sun-night-mode.png");
   }
@@ -41,7 +44,6 @@ h1 {
 
 .header-buttons {
   box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
-
   outline: none;
   transition: 0.2s all;
 }
@@ -65,7 +67,7 @@ button:hover {
 
 #power {
   &.night-mode {
-    content: url("assets/power-night-mode.png");
+    content: url("assets/power-button-night-mode.png");
   }
 }
 
@@ -83,13 +85,16 @@ img {
   background-color: #b4ecc1;
   height: 350px;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+  flex-direction: column;
   justify-items: center; /* Centre horizontalement les éléments */
-  align-items: center; /* Centre verticalement les éléments */
   padding: 20px;
+  gap: 20px;
+
   &.night-mode {
     background-color: #194357;
+    color: #b4ecc1;
   }
 }
 
@@ -114,4 +119,17 @@ img {
 
 .main-buttons:hover {
   background-color: #a1ddaf;
+}
+
+.action-button {
+  height: 1em; /* Ajustez la hauteur selon vos besoins */
+}
+
+.container-button-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%; /* Chaque groupe occupe 45% de la largeur */
+  text-align: center;
+  gap: 10px;
 }
