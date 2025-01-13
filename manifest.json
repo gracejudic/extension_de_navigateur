@@ -13,6 +13,6 @@
     "action":{
         "default_popup":"index.html",
          
-    "default_icon": "assets/font-size.png"
+    "default_icon": "assets/power-button-day-mode.png"
   }
     }
