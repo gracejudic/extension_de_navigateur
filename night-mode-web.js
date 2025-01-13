@@ -1,4 +1,4 @@
-const DAY_NIGHT_MODE = document.getElementById("DAY-NIGHT-MODE");
+const NIGHT_MODE_WEB_BUTTON_ELMT = document.getElementById("night-mode-web");
 const ARRAY_WEB_ELEMENTS = ['h1','h2','h3','h4','h5','h6','p','a','li','ul','td','span','div','html','body','header','th','strong','em','main','figcaption', 'ytd-mini-guide-renderer'];
 let isNightModeOn = false;
 
@@ -16,8 +16,13 @@ function nightModeWebPage(webElements,booleanSwitchMode) {
     })   
 }
 
-DAY_NIGHT_MODE.addEventListener('click',() => {
-    isNightModeOn =! isNightModeOn;
+NIGHT_MODE_WEB_BUTTON_ELMT.addEventListener('click',() => {
+    isNightModeOn =!isNightModeOn;
+    if(!isNightModeOn) {
+        NIGHT_MODE_WEB_BUTTON_ELMT.classList.add('night-mode-button-change')
+    } else {
+        NIGHT_MODE_WEB_BUTTON_ELMT.classList.remove('night-mode-button-change')
+    }
     chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
         chrome.scripting.executeScript({
             target: {tabId: tabs[0].id},
