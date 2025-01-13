@@ -90,7 +90,7 @@ img {
 
 #main {
   background-color: #b4ecc1;
-  height: 350px;
+  height: 550px;
   width: 100%;
   display: flex;
   flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
@@ -146,7 +146,7 @@ img {
   gap: 10px;
 }
 
-#night-mode-web {
+#mode-day-night {
   &.night-mode-button-change {
     content: url("assets/sun-day-mode-web.png");
   }

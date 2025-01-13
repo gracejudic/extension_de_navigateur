@@ -1,4 +1,5 @@
-const NIGHT_MODE_WEB_BUTTON_ELMT = document.getElementById("night-mode-web");
+const NIGHT_MODE_WEB_BUTTON_ELMT = document.getElementById("DAY-NIGHT-MODE");
+const MODE_DAY_NIGHT_WEB_IMG = document.getElementById("mode-day-night");
 const ARRAY_WEB_ELEMENTS = ['h1','h2','h3','h4','h5','h6','p','a','li','ul','td','span','div','html','body','header','th','strong','em','main','figcaption', 'ytd-mini-guide-renderer'];
 let isNightModeOn = false;
 
@@ -16,13 +17,18 @@ function nightModeWebPage(webElements,booleanSwitchMode) {
     })   
 }
 
+
+function machinLune() {
+    if(!isNightModeOn) {
+        MODE_DAY_NIGHT_WEB_IMG.classList.add('night-mode-button-change')
+    } else {
+        MODE_DAY_NIGHT_WEB_IMG.classList.remove('night-mode-button-change')
+    }
+}
+
 NIGHT_MODE_WEB_BUTTON_ELMT.addEventListener('click',() => {
     isNightModeOn =!isNightModeOn;
-    if(!isNightModeOn) {
-        NIGHT_MODE_WEB_BUTTON_ELMT.classList.add('night-mode-button-change')
-    } else {
-        NIGHT_MODE_WEB_BUTTON_ELMT.classList.remove('night-mode-button-change')
-    }
+    machinLune();
     chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
         chrome.scripting.executeScript({
             target: {tabId: tabs[0].id},
@@ -31,3 +37,4 @@ NIGHT_MODE_WEB_BUTTON_ELMT.addEventListener('click',() => {
         })
     })
 })
+
