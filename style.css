@@ -134,7 +134,7 @@ img {
 }
 
 .action-button {
-  height: 1em; /* Ajustez la hauteur selon vos besoins */
+  height: 1em; 
 }
 
 .container-button-main {
@@ -150,4 +150,59 @@ img {
   &.night-mode-button-change {
     content: url("assets/sun-day-mode-web.png");
   }
+}
+
+.container-button-main input[type="range"] {
+  -webkit-appearance: none; 
+  appearance: none;
+  position: relative;
+  height: 1em; 
+  color: inherit;
+  background-color: #194357;
+  border-radius: 1em;
+  outline: none;
+}
+
+.container-button-main input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  appearance: none;
+  position: relative;
+  z-index: 10;
+  width: 1.5em;
+  height: 1.5em;
+ background-color: #b4ecc1;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0.2em solid #13303e;
+}
+
+.container-button-main input[type="range"]::-moz-range-thumb {
+  position: relative;
+  z-index: 10;
+  width: 0.5em;
+  height: 0.5em;   
+  background-color: #b4ecc1;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0.2em solid #13303e;
+}
+
+.container-button-main input[type="range"]::-moz-range-track {
+  background-color: transparent;
+}
+
+#slider-police {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #c7ffd4;
+  border: 1px solid #194357;
+  border-radius: 8px;
+  height: 75px;
+  width: 150px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  outline: none;
+  transition: 0.2s all;
+  gap: 10px;
 }
