@@ -23,8 +23,8 @@ function changeTextColor(isColorChanged) {
 document.addEventListener('DOMContentLoaded',()=>{
     BUTTON_FONT_COLOR_CHANGE_ELMT.addEventListener('click',() => {
           // Basculer l'état
-          isColorChanged = !isColorChanged;
-        chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
+        isColorChanged = !isColorChanged;
+        chrome.tabs.query({active: true, currentWindow: true }, (tabs)=> {
             chrome.scripting.executeScript({
                 target: {tabId: tabs[0].id},
                 func: changeTextColor,
