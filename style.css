@@ -90,7 +90,7 @@ img {
 
 #main {
   background-color: #b4ecc1;
-  height: 650px;
+  height: 750px;
   width: 100%;
   display: flex;
   flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
