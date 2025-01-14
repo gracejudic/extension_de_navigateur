@@ -1,5 +1,5 @@
 // Fonction exécutée pour désactiver la fonctionnalité dans la page cible
-function desactiverSurvolAlt() {
+function disabledAltHover() {
     if (!window.altHandlers) return;
 
     const images = document.querySelectorAll('img');
@@ -13,4 +13,4 @@ function desactiverSurvolAlt() {
 }
 
 
-export default desactiverSurvolAlt;
+export default disabledAltHover;

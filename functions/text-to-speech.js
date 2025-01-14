@@ -1,13 +1,5 @@
-const TEXT_TO_SPEECH_BUTTON_ELMT = document.getElementById("text-to-speech");
-let isSpeakingModeOn = false;
-
-// Ajouter un message de débogage pour vérifier que le bouton est bien trouvé
-console.log("Bouton trouvé:", TEXT_TO_SPEECH_BUTTON_ELMT);
 
 TEXT_TO_SPEECH_BUTTON_ELMT.addEventListener("click", () => {
-    console.log("Bouton cliqué");
-    console.log("État actuel isSpeakingModeOn:", isSpeakingModeOn);
-
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
         if (!isSpeakingModeOn) {
             console.log("Démarrage de la lecture");
