@@ -1,46 +1,9 @@
-const BUTTON_READ_ALT_ATTRIBUT_ELMT = document.getElementById('read-alt-attribut');
+// import des éléments HTML récupérés
+// import {
+//     BUTTON_READ_ALT_ATTRIBUT_ELMT
+// } from "../elementsHtmlRecuperes.js";
 
-document.addEventListener('DOMContentLoaded', () => {
-    let fonctionnaliteActive = false; // Suivre l'état de la fonctionnalité
-
-    BUTTON_READ_ALT_ATTRIBUT_ELMT.addEventListener('click', () => {
-        // Vérifier si l'onglet actif est accessible
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            if (tabs.length === 0) {
-                console.error('Aucun onglet actif trouvé.');
-                return;
-            }
-
-            if (fonctionnaliteActive) {
-                // Désactiver la fonctionnalité
-                chrome.scripting.executeScript({
-                    target: { tabId: tabs[0].id },
-                    func: desactiverSurvolAlt
-                }, () => {
-                    if (chrome.runtime.lastError) {
-                        console.error('Erreur lors de la désactivation :', chrome.runtime.lastError);
-                    } else {
-                        fonctionnaliteActive = false;
-                        console.log('Fonctionnalité désactivée.');
-                    }
-                });
-            } else {
-                // Activer la fonctionnalité
-                chrome.scripting.executeScript({
-                    target: { tabId: tabs[0].id },
-                    func: activerSurvolAlt
-                }, () => {
-                    if (chrome.runtime.lastError) {
-                        console.error('Erreur lors de l\'activation :', chrome.runtime.lastError);
-                    } else {
-                        fonctionnaliteActive = true;
-                        console.log('Fonctionnalité activée.');
-                    }
-                });
-            }
-        });
-    });
-});
+// // const BUTTON_READ_ALT_ATTRIBUT_ELMT = document.getElementById('read-alt-attribut');
 
 // Fonction exécutée pour activer la fonctionnalité dans la page cible
 function activerSurvolAlt() {
@@ -95,3 +58,5 @@ function desactiverSurvolAlt() {
     delete window.altHandlers;
     console.log('Survol désactivé.');
 }
+
+// export default {activerSurvolAlt, desactiverSurvolAlt}

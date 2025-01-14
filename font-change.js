@@ -1,3 +1,5 @@
+const FONT_CHANGE_BUTTON_ELMT = document.getElementById("font-change");
+
 let elements_to_change = [
     'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'h7', 'p', 'a', 'li','ul', 'td', 'span', 'div'
 ]

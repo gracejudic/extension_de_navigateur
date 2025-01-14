@@ -37,4 +37,3 @@ NIGHT_MODE_WEB_BUTTON_ELMT.addEventListener('click',() => {
         })
     })
 })
-

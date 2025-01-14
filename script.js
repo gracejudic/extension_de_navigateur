@@ -1,3 +1,15 @@
+// import des éléments HTML récupérés
+import BUTTON_READ_ALT_ATTRIBUT_ELMT from "./elementsHtmlRecuperes.js";
+
+
+// import des fonctions
+import activerSurvolAlt from "./functions/activerSurvolAlt.js";
+import desactiverSurvolAlt from "./functions/desactiverSurvolAlt.js";
+
+
+// import {activerSurvolAlt} from "./functions/readAltImage.js"
+// import {desactiverSurvoltAlt} from "./functions/readAltImage.js"
+
 const HEADER_ELMT = document.getElementById("header");
 const NIGHT_BUTTON_EXT_ELMT = document.getElementById("night-button");
 const SWITCH_MODE_IMG_ELMT = document.getElementById("switch-mode");
@@ -11,23 +23,23 @@ const CURRENT_SIZE_ELMT = document.getElementById("currentSize")
 
 let nightModeState = false;
 let isExtensionOff = false;
-let augmentation_police = false;
+// let isFontIncreased = false;
 
 function dayMode() {
-    HEADER_ELMT.classList.remove("night-mode")
-    SWITCH_MODE_IMG_ELMT.classList.remove("night-mode")
-    EXTENSION_NAME_ELMT.classList.remove("night-mode")
-    POWER_IMG_ELMT.classList.remove("night-mode")
-    MAIN_ELMT.classList.remove("night-mode")
+    HEADER_ELMT.classList.remove("night-mode");
+    SWITCH_MODE_IMG_ELMT.classList.remove("night-mode");
+    EXTENSION_NAME_ELMT.classList.remove("night-mode");
+    POWER_IMG_ELMT.classList.remove("night-mode");
+    MAIN_ELMT.classList.remove("night-mode");
     CURRENT_SIZE_ELMT.style.color = '#194357';
 }
 
 function nightMode() { 
-    HEADER_ELMT.classList.add("night-mode")
-    SWITCH_MODE_IMG_ELMT.classList.add("night-mode")
-    EXTENSION_NAME_ELMT.classList.add("night-mode")
-    POWER_IMG_ELMT.classList.add("night-mode")
-    MAIN_ELMT.classList.add("night-mode")
+    HEADER_ELMT.classList.add("night-mode");
+    SWITCH_MODE_IMG_ELMT.classList.add("night-mode");
+    EXTENSION_NAME_ELMT.classList.add("night-mode");
+    POWER_IMG_ELMT.classList.add("night-mode");
+    MAIN_ELMT.classList.add("night-mode");
     CURRENT_SIZE_ELMT.style.color = '#194357';
 }
 
@@ -60,29 +72,72 @@ POWER_BUTTON_ELMT.addEventListener('click',() => {
 
 // document.addEventListener('DOMContentLoaded',()=>{
 //     FONT_SIZE_CHANGE_BUTTON_ELMT.addEventListener('click',() => {
-//         augmentation_police = !augmentation_police;
+//         isFontIncreased = !isFontIncreased;
 //         chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
 //             chrome.scripting.executeScript({
 //                 target: {tabId: tabs[0].id},
-//                 func: augmentation_Taille_Police,
-//                 args:[augmentation_police],
+//                 func: increasingFont,
+//                 args:[isFontIncreased],
 //             })
 //         })
 //     })
 // })
 
-// function augmentation_Taille_Police(augmentation_police) {
-//     const CHANGEMENT_TAILLE = ['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
+// function increasingFont(isFontIncreased) {
+//     const ELEMENTS_WEB_PAGE = ['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
    
-//     CHANGEMENT_TAILLE.forEach((selector) => {
+//     ELEMENTS_WEB_PAGE.forEach((selector) => {
 //         document.querySelectorAll(selector).forEach((element) => {
-//             const currentFontSize = window.getComputedStyle(element).fontSize;
-//             const size = parseFloat(currentFontSize);
-//             if (!augmentation_police) {
-//                 element.style.fontSize = size * 1.3 + 'px';
+//             const CURRENT_FONT_SIZE = window.getComputedStyle(element).fontSize;
+//             const SIZE = parseFloat(CURRENT_FONT_SIZE);
+//             if (!isFontIncreased) {
+//                 element.style.fontSize = SIZE * 1.3 + 'px';
 //             } else {
 //                 element.style.fontSize = '';
 //             }
 //         })
 //     })
 // }
+
+document.addEventListener('DOMContentLoaded', () => {
+    let fonctionnaliteActive = false; // Suivre l'état de la fonctionnalité
+
+    BUTTON_READ_ALT_ATTRIBUT_ELMT.addEventListener('click', () => {
+        // Vérifier si l'onglet actif est accessible
+        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+            if (tabs.length === 0) {
+                console.error('Aucun onglet actif trouvé.');
+                return;
+            }
+
+            if (fonctionnaliteActive) {
+                // Désactiver la fonctionnalité
+                chrome.scripting.executeScript({
+                    target: { tabId: tabs[0].id },
+                    func: desactiverSurvolAlt
+                }, () => {
+                    if (chrome.runtime.lastError) {
+                        console.error('Erreur lors de la désactivation :', chrome.runtime.lastError);
+                    } else {
+                        fonctionnaliteActive = false;
+                        console.log('Fonctionnalité désactivée.');
+                    }
+                });
+            } else {
+                // Activer la fonctionnalité
+                chrome.scripting.executeScript({
+                    target: { tabId: tabs[0].id },
+                    func: activerSurvolAlt
+                }, () => {
+                    if (chrome.runtime.lastError) {
+                        console.error('Erreur lors de l\'activation :', chrome.runtime.lastError);
+                    } else {
+                        fonctionnaliteActive = true;
+                        console.log('Fonctionnalité activée.');
+                    }
+                });
+            }
+        });
+    });
+});
+
