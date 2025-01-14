@@ -6,7 +6,7 @@ const POWER_IMG_ELMT = document.getElementById("power");
 const MAIN_ELMT = document.getElementById("main");
 const POWER_BUTTON_ELMT = document.getElementById("power-day-button");
 const FONT_CHANGE_BUTTON_ELMT = document.getElementById("font-change");
-// const FONT_SIZE_CHANGE_BUTTON_ELMT = document.getElementById("font-size-change");
+ const FONT_SIZE_CHANGE_BUTTON_ELMT = document.getElementById("font-size-change");
 const CURRENT_SIZE_ELMT = document.getElementById("currentSize")
 
 let nightModeState = false;
@@ -58,31 +58,31 @@ POWER_BUTTON_ELMT.addEventListener('click',() => {
     onOffExtension(isExtensionOff);
 })
 
-// document.addEventListener('DOMContentLoaded',()=>{
-//     FONT_SIZE_CHANGE_BUTTON_ELMT.addEventListener('click',() => {
-//         augmentation_police = !augmentation_police;
-//         chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
-//             chrome.scripting.executeScript({
-//                 target: {tabId: tabs[0].id},
-//                 func: augmentation_Taille_Police,
-//                 args:[augmentation_police],
-//             })
-//         })
-//     })
-// })
+document.addEventListener('DOMContentLoaded',()=>{
+    FONT_SIZE_CHANGE_BUTTON_ELMT.addEventListener('click',() => {
+        augmentation_police = !augmentation_police;
+        chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
+            chrome.scripting.executeScript({
+                target: {tabId: tabs[0].id},
+                func: augmentation_Taille_Police,
+                args:[augmentation_police],
+            })
+        })
+    })
+})
 
-// function augmentation_Taille_Police(augmentation_police) {
-//     const CHANGEMENT_TAILLE = ['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
+function augmentation_Taille_Police(augmentation_police) {
+    const CHANGEMENT_TAILLE = ['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
    
-//     CHANGEMENT_TAILLE.forEach((selector) => {
-//         document.querySelectorAll(selector).forEach((element) => {
-//             const currentFontSize = window.getComputedStyle(element).fontSize;
-//             const size = parseFloat(currentFontSize);
-//             if (!augmentation_police) {
-//                 element.style.fontSize = size * 1.3 + 'px';
-//             } else {
-//                 element.style.fontSize = '';
-//             }
-//         })
-//     })
-// }
+    CHANGEMENT_TAILLE.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((element) => {
+            const currentFontSize = window.getComputedStyle(element).fontSize;
+            const size = parseFloat(currentFontSize);
+            if (!augmentation_police) {
+                element.style.fontSize = size * 1.3 + 'px';
+            } else {
+                element.style.fontSize = '';
+            }
+        })
+    })
+}
