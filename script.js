@@ -76,10 +76,9 @@ function augmentation_Taille_Police(augmentation_police) {
    
     CHANGEMENT_TAILLE.forEach((selector) => {
         document.querySelectorAll(selector).forEach((element) => {
-            const currentFontSize = window.getComputedStyle(element).fontSize;
-            const size = parseFloat(currentFontSize);
-            if (!augmentation_police) {
-                element.style.fontSize = size * 1.3 + 'px';
+           
+         if (!augmentation_police) {
+                element.style.fontSize =  "30px" ; 
             } else {
                 element.style.fontSize = '';
             }
