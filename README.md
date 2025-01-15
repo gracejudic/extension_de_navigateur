@@ -54,7 +54,7 @@ son nom : ** Do Good To Citizens **
 L'idée est de personnaliser toutes pages WEB:
 
 - Changer la police (imposer la police Verdana)
-- Changer la taille de la police (imposer la taille 24px pour plus de lisibilité)
+- Changer la taille de la police (imposer la taille 25px pour plus de lisibilité)
 - Changer la couleur (en utilisant ces couleurs classées AA pour l'accessibilité https://gradients.app/fr/legibility/63)
 - Changer l'interlignage (imposer 1.8)
 
