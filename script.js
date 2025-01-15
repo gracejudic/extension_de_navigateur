@@ -6,12 +6,12 @@ const POWER_IMG_ELMT = document.getElementById("power");
 const MAIN_ELMT = document.getElementById("main");
 const POWER_BUTTON_ELMT = document.getElementById("power-day-button");
 const FONT_CHANGE_BUTTON_ELMT = document.getElementById("font-change");
- const FONT_SIZE_CHANGE_BUTTON_ELMT = document.getElementById("font-size-change");
+const FONT_SIZE_CHANGE_BUTTON_ELMT = document.getElementById("font-size-change");
 const CURRENT_SIZE_ELMT = document.getElementById("currentSize")
 
 let nightModeState = false;
 let isExtensionOff = false;
-let fontInCrease = false;
+let fontIncrease = false;
 
 function dayMode() {
     HEADER_ELMT.classList.remove("night-mode")
@@ -60,24 +60,24 @@ POWER_BUTTON_ELMT.addEventListener('click',() => {
 
 document.addEventListener('DOMContentLoaded',()=>{
     FONT_SIZE_CHANGE_BUTTON_ELMT.addEventListener('click',() => {
-        fontInCrease= !fontInCrease;
+        fontIncrease= !fontIncrease;
         chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
             chrome.scripting.executeScript({
                 target: {tabId: tabs[0].id},
-                func: increase_Font_Size,
-                args:[fontInCrease],
+                func: increaseFontSize,
+                args:[fontIncrease],
             })
         })
     })
 })
 
-function increase_Font_Size(fontInCrease) {
-    const CHANGEMENT_TAILLE = ['h1','h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
+function increaseFontSize(fontIncrease) {
+    const CHANGE_SIZE = ['h1','h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
    
-    CHANGEMENT_TAILLE.forEach((selector) => {
+    CHANGE_SIZE.forEach((selector) => {
         document.querySelectorAll(selector).forEach((element) => {
            
-         if (!fontInCrease) {
+         if (!fontIncrease) {
                 element.style.fontSize =  "30px" ; 
             } else {
                 element.style.fontSize = '';
