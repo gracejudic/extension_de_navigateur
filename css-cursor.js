@@ -1,5 +1,6 @@
+const POLICE_SLIDER_ELMT = document.getElementById('size-Police-Slider');
+
 document.addEventListener('DOMContentLoaded', () => {
-    const POLICE_SLIDER_ELMT = document.getElementById('size-Police-Slider');
     const CURRENT_SIZE_ELMT = document.getElementById('currentSize');
 
     // Fonction pour ajuster la taille de la police

@@ -7,27 +7,28 @@ const MAIN_ELMT = document.getElementById("main");
 const POWER_BUTTON_ELMT = document.getElementById("power-day-button");
 const FONT_CHANGE_BUTTON_ELMT = document.getElementById("font-change");
 const FONT_SIZE_CHANGE_BUTTON_ELMT = document.getElementById("font-size-change");
-const CURRENT_SIZE_ELMT = document.getElementById("currentSize")
+const CURRENT_SIZE_ELMT = document.getElementById("currentSize");
+const SLIDER_POLICE_SECTION_ELMT = document.getElementById("slider-police");
 
 let nightModeState = false;
 let isExtensionOff = false;
 let fontIncrease = false;
 
 function dayMode() {
-    HEADER_ELMT.classList.remove("night-mode")
-    SWITCH_MODE_IMG_ELMT.classList.remove("night-mode")
-    EXTENSION_NAME_ELMT.classList.remove("night-mode")
-    POWER_IMG_ELMT.classList.remove("night-mode")
-    MAIN_ELMT.classList.remove("night-mode")
+    HEADER_ELMT.classList.remove("night-mode");
+    SWITCH_MODE_IMG_ELMT.classList.remove("night-mode");
+    EXTENSION_NAME_ELMT.classList.remove("night-mode");
+    POWER_IMG_ELMT.classList.remove("night-mode");
+    MAIN_ELMT.classList.remove("night-mode");
     CURRENT_SIZE_ELMT.style.color = '#194357';
 }
 
 function nightMode() { 
-    HEADER_ELMT.classList.add("night-mode")
-    SWITCH_MODE_IMG_ELMT.classList.add("night-mode")
-    EXTENSION_NAME_ELMT.classList.add("night-mode")
-    POWER_IMG_ELMT.classList.add("night-mode")
-    MAIN_ELMT.classList.add("night-mode")
+    HEADER_ELMT.classList.add("night-mode");
+    SWITCH_MODE_IMG_ELMT.classList.add("night-mode");
+    EXTENSION_NAME_ELMT.classList.add("night-mode");
+    POWER_IMG_ELMT.classList.add("night-mode");
+    MAIN_ELMT.classList.add("night-mode");
     CURRENT_SIZE_ELMT.style.color = '#194357';
 }
 
@@ -43,7 +44,7 @@ NIGHT_BUTTON_EXT_ELMT.addEventListener("click", () => {
 })
 
 function onOffExtension(switchBool) {
-    let myButtonsArray = [NIGHT_BUTTON_EXT_ELMT,FONT_CHANGE_BUTTON_ELMT,BUTTON_FONT_COLOR_CHANGE_ELMT,LINE_HEIGHT_BUTTON_ELMT,NIGHT_MODE_WEB_BUTTON_ELMT,BUTTON_READ_ALT_ATTRIBUT_ELMT];
+    let myButtonsArray = [FONT_SIZE_CHANGE_BUTTON_ELMT, NIGHT_BUTTON_EXT_ELMT,FONT_CHANGE_BUTTON_ELMT,BUTTON_FONT_COLOR_CHANGE_ELMT,LINE_HEIGHT_BUTTON_ELMT,NIGHT_MODE_WEB_BUTTON_ELMT,BUTTON_READ_ALT_ATTRIBUT_ELMT, POLICE_SLIDER_ELMT, TEXT_TO_SPEECH_BUTTON_ELMT, CURRENT_SIZE_ELMT, SLIDER_POLICE_SECTION_ELMT];
     if (!switchBool) {
         myButtonsArray.forEach((element) => element.classList.add('disabled'));
         myButtonsArray.forEach((element) => element.disabled = true); 

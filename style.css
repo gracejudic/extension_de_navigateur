@@ -205,4 +205,9 @@ img {
   outline: none;
   transition: 0.2s all;
   gap: 10px;
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }
