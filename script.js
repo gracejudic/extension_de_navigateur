@@ -79,7 +79,7 @@ function increaseFontSize(fontIncrease) {
         document.querySelectorAll(selector).forEach((element) => {
            
          if (!fontIncrease) {
-                element.style.fontSize =  "30px" ; 
+                element.style.fontSize =  "25px" ; 
             } else {
                 element.style.fontSize = '';
             }

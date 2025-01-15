@@ -44,7 +44,7 @@ Code review de la branche dev (en équipe)
 
 
 # IDEE DE PROJET
-La création d'une extention Chrome qui a pour but de rendre accèssible tout type de site au plus grand nombre.
+La création d'une extension Chrome qui a pour but de rendre accessible tout type de site au plus grand nombre.
 
 son nom : ** Do Good To Citizens ** 
 
@@ -54,18 +54,18 @@ son nom : ** Do Good To Citizens **
 L'idée est de personnaliser toutes pages WEB:
 
 - Changer la police (imposer la police Verdana)
-- Changer la taille de la police (imposée la taille 30px pour plus de lisibilité)
+- Changer la taille de la police (imposer la taille 24px pour plus de lisibilité)
 - Changer la couleur (en utilisant ces couleurs classées AA pour l'accessibilité https://gradients.app/fr/legibility/63)
 - Changer l'interlignage (imposer 1.8)
 
 
 ## APRÈS MVP : 
-- proposer mode nuit 
-- lire balises des images au hover de la souris
-- voix-off lecture de la page
-- lien avec une IA de traduction
-- créer une loupe
-- proposer des sous-titres si le site visité héberge des vidéos
+- Proposer mode nuit 
+- Lire balises des images au hover de la souris
+- Voix-off lecture de la page
+- Lien avec une IA de traduction
+- Créer une loupe
+- Proposer des sous-titres si le site visité héberge des vidéos
 
 
 ## WIREFRAME
