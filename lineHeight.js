@@ -1,6 +1,6 @@
 const LINE_HEIGHT_BUTTON_ELMT = document.getElementById('line-height-change');
 const ALL_PAGE_ELEMENTS = ['h1','h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li', 'ul', 'td', 'span', 'div'];
-let isLineHeightIncreased = false;
+let isLineHeightIncreased = true;
 
 function increaseLineHeight(myElementsArray,isIncreased) {
     myElementsArray.forEach(selector => {

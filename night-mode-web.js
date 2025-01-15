@@ -1,7 +1,7 @@
 const NIGHT_MODE_WEB_BUTTON_ELMT = document.getElementById("DAY-NIGHT-MODE");
 const MODE_DAY_NIGHT_WEB_IMG = document.getElementById("mode-day-night");
 const ARRAY_WEB_ELEMENTS = ['h1','h2','h3','h4','h5','h6','p','a','li','ul','td','span','div','html','body','header','th','strong','em','main','figcaption', 'ytd-mini-guide-renderer'];
-let isNightModeOn = false;
+let isNightModeOn = true;
 
 function nightModeWebPage(webElements,booleanSwitchMode) {    
     webElements.forEach(selector => {

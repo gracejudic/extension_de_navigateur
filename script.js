@@ -11,8 +11,8 @@ const CURRENT_SIZE_ELMT = document.getElementById("currentSize");
 const SLIDER_POLICE_SECTION_ELMT = document.getElementById("slider-police");
 
 let nightModeState = false;
-let isExtensionOff = false;
-let fontIncrease = false;
+let isExtensionOff = true;
+let fontIncrease = true;
 
 function dayMode() {
     HEADER_ELMT.classList.remove("night-mode");
