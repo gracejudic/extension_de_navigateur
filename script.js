@@ -11,7 +11,7 @@ const CURRENT_SIZE_ELMT = document.getElementById("currentSize")
 
 let nightModeState = false;
 let isExtensionOff = false;
-let augmentation_police = false;
+let fontInCrease = false;
 
 function dayMode() {
     HEADER_ELMT.classList.remove("night-mode")
@@ -60,24 +60,24 @@ POWER_BUTTON_ELMT.addEventListener('click',() => {
 
 document.addEventListener('DOMContentLoaded',()=>{
     FONT_SIZE_CHANGE_BUTTON_ELMT.addEventListener('click',() => {
-        augmentation_police = !augmentation_police;
+        fontInCrease= !fontInCrease;
         chrome.tabs.query({active: true, currentWindow: true }, (tabs)=>{
             chrome.scripting.executeScript({
                 target: {tabId: tabs[0].id},
-                func: augmentation_Taille_Police,
-                args:[augmentation_police],
+                func: increase_Font_Size,
+                args:[fontInCrease],
             })
         })
     })
 })
 
-function augmentation_Taille_Police(augmentation_police) {
-    const CHANGEMENT_TAILLE = ['h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
+function increase_Font_Size(fontInCrease) {
+    const CHANGEMENT_TAILLE = ['h1','h2', 'h3', 'h4', 'h5', 'h6', 'p', 'a', 'li' ,'td','span', 'div', 'html', 'body', 'header', 'th', 'strong', 'em', 'main'];
    
     CHANGEMENT_TAILLE.forEach((selector) => {
         document.querySelectorAll(selector).forEach((element) => {
            
-         if (!augmentation_police) {
+         if (!fontInCrease) {
                 element.style.fontSize =  "30px" ; 
             } else {
                 element.style.fontSize = '';
